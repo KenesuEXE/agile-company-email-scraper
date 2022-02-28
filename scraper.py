@@ -3,11 +3,13 @@ from selenium.webdriver import Chrome
 from selenium.webdriver import ChromeOptions
 import time
 
+url = "https://scaledagile.com/business-solutions/find-a-partner/#id=0010W00002cIOTSQA4"
+
 # Load website
 options = ChromeOptions()
 options.headless = True
 driver = Chrome(options=options)
-driver.get("https://scaledagile.com/business-solutions/find-a-partner/#id=0010W00002cIOTSQA4")
+driver.get(url)
 time.sleep(10)
 soup = BeautifulSoup(driver.page_source, "html.parser")
 driver.quit()
